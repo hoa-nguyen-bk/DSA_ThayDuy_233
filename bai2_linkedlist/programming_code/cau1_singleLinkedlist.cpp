@@ -3,6 +3,9 @@
 #include <sstream>
 using namespace std;
 
+//**********************
+//**      START       **
+//**********************
 class IntSLinkedList {
 public:
     class Node; // Forward declaration
@@ -93,7 +96,9 @@ public:
         Node(int data) : data(data), next(NULL) {}
     };
 };
-
+//**********************
+//**       END        **
+//**********************
 int main() {
     IntSLinkedList list;
     int size = 10;
