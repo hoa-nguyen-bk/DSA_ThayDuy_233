@@ -1,83 +1,70 @@
 #include <iostream>
+#include <algorithm>
+
 using namespace std;
-template <class T>
-class Sorting
+int countSwap = 0;
+int partition(int arr[], int low, int high)
 {
-private:
-  static void printArray(T *start, T *end)
-  {
-    int size = end - start;
-    for (int i = 0; i < size; i++)
-      cout << start[i] << " ";
-    cout << endl;
-  }
+  // choose the pivot
 
-  // TODO: Write your code here
+  int pivot = arr[low];
+  cout << "pivot = " << pivot << endl;
+  // Index of smaller element and Indicate
+  // the right position of pivot found so far
+  int i = (low - 1);
 
-public:
-  static T *Partition(T *start, T *end)
+  for (int j = low; j <= high - 1; j++)
   {
-    // TODO: return the pointer which points to the pivot after rearrange the array.
-    T p = *start;
-    int i = 0; // -1 để ra được vị trí đang đứng chính là 0
-    int j = end - start;
-    do
+    countSwap++;
+    // If current element is smaller than the pivot
+    if (arr[j] < pivot)
     {
-      do
-      {
-        i = i + 1;
-      } while (start[i] < p);
-
-      do
-      {
-        j = j - 1;
-
-      } while (start[j] > p);
-
-      T temp = start[i]; // swap(A[i],A[j])
-      start[i] = start[j];
-      start[j] = temp;
-    } while (i < j);
-
-    T temp1 = start[i]; // swap(A[i],A[j])
-    start[i] = start[j];
-    start[j] = temp1;
-
-    T temp2 = *start; //  swap(A[l],A[j])
-    *start = start[j];
-    start[j] = temp2;
-    return (start + j); // để ra được địa chỉ j
-  }
-
-  static void
-  QuickSort(T *start, T *end)
-  {
-    // TODO
-    // In this question, you must print out the index of pivot in subarray after everytime calling method Partition.
-
-    if (start < end)
-    {
-      T *pivot_position = Partition(start, end);
-      cout << pivot_position - start << " ";
-      QuickSort(start, pivot_position);
-      QuickSort(pivot_position + 1, end);
+      // Increment index of smaller element
+      i++;
+      swap(arr[i], arr[j]);
     }
   }
-};
+  swap(arr[i + 1], arr[high]);
+  return (i + 1);
+}
+
+// The Quicksort function Implement
+
+void quickSort(int arr[], int low, int high)
+{
+  // when low is less than high
+  if (low < high)
+  {
+    // pi is the partition return index of pivot
+
+    int pi = partition(arr, low, high);
+
+    // Recursion Call
+    // smaller element than pivot goes left and
+    // higher element goes right
+    quickSort(arr, low, pi - 1);
+    quickSort(arr, pi + 1, high);
+    cout<<"\n In mảng: ";
+    for (int i = 0; i < high - low; i++)
+    {
+      cout << arr[i]<<"-";
+    }
+  }
+}
+
 int main()
 {
-  int array[] = {3, 5, 7, 10, 12, 14, 15, 13, 1, 2, 9, 6, 4, 8, 11, 16, 17, 18, 20, 19};
-  cout << "Index of pivots: ";
-  Sorting<int>::QuickSort(&array[0], &array[20]);
-  cout << "\n";
-  cout << "Array after sorting: ";
-  for (int i : array)
-    cout << i << " ";
-
-  // Index of pivots: 2 0 0 6 1 0 2 1 0 0 2 1 0 0 0 0 0 0 1 0
-  // Array after sorting: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
-  cout << endl
-       << "happy ending" << endl;
-
+  int arr[] = {1,2,3,4,5};
+  int n = sizeof(arr) / sizeof(arr[0]);
+  // Function call
+  quickSort(arr, 0, n - 1);
+  // Print the sorted array
+  cout << "\ncount = " << countSwap << endl;
+  cout << "Sorted Array\n";
+  for (int i = 0; i < n; i++)
+  {
+    cout << arr[i] << " ";
+  }
   return 0;
 }
+// This Code is Contributed By Diwakar Jha
