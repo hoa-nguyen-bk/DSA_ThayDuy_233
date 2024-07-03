@@ -32,7 +32,7 @@ void Sorting<T>::selectionSort(T *start, T *end)
     for (int i = min_idx + 1; i < size; ++i)
     {
       soSanhCost += 6;
-      cout << "Lần so sánh thứ: " << soSanhCost / 6 << endl;
+      cout << "Lần so sánh thứ: " << soSanhCost / 6 << " với " << arr[min_idx] <<" và "<< arr[i]  << endl;
       if (arr[min_idx] > arr[i])
       {
         min_idx = i;
@@ -50,7 +50,9 @@ void Sorting<T>::selectionSort(T *start, T *end)
 
 int main()
 {
-  int arr[] = {37,27,43,3,9,82,10};
-  Sorting<int>::selectionSort(&arr[0], &arr[6]);
+  const int length = 7;
+  int arr[length] = {37,27,43,3,9,82,10};
+  
+  Sorting<int>::selectionSort(&arr[0], &arr[length-1]);
   return 0;
 }
