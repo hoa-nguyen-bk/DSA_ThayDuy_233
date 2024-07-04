@@ -61,7 +61,7 @@ void quickSort(int arr[], int low, int high)
 // Driver Code
 int main()
 {
-  int arr[] = {1, 2, 3, 4, 5};
+  int arr[] = {4,1,5,3,2};
   int n = sizeof(arr) / sizeof(arr[0]);
   quickSort(arr, 0, n - 1);
   cout << "\ncount = " << countSwap << endl;
