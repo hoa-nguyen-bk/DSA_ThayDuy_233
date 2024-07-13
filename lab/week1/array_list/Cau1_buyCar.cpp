@@ -8,8 +8,6 @@ maximum cars this person can buy with his money, and return that number.
 Example:
 nums=[90, 30, 20, 40, 50]; k=90;
 The result is 3, he can buy the cars having index 1, 2, 3 (first index is 0).
-Note: The library iostream, 'algorithm' and using namespace std have been used. You can add other functions but you
-are not allowed to add other libraries.
 */
 
 #include <iostream>
