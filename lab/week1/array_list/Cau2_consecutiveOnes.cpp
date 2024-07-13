@@ -7,6 +7,7 @@ The function returns if all the 1s appear consecutively in nums. If nums does no
 #include <iostream>
 #include <vector>
 using namespace std;
+//----------------START----------------------
 bool consecutiveOnes(vector<int>& nums) {
     int len = nums.size();
     bool foundOne = false;  // Đã tìm thấy số 1 chưa
@@ -30,6 +31,7 @@ bool consecutiveOnes(vector<int>& nums) {
 
     return true;
 }
+//----------------END----------------------
 int main()
 {
   vector<int> nums{0, 1, 1, 1, 9, 8};
