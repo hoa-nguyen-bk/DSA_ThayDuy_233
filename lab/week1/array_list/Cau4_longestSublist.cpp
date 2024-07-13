@@ -5,7 +5,7 @@ The function returns the length of the longest subarray where all words share th
 #include <iostream>
 #include <vector>
 using namespace std;
-//----------------START--------------------
+//---START---
 int longestSublist(vector<string> &words)
 {
   // STUDENT ANSWER
@@ -25,7 +25,7 @@ int longestSublist(vector<string> &words)
   }
   return result;
 }
-//----------------END----------------------
+//---END----
 int main()
 {
   vector<string> words{"faction", "fight", "and", "are", "attitude"};

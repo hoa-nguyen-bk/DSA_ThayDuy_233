@@ -8,7 +8,7 @@ If no such index exists, return -1.
 #include <iostream>
 using namespace std;
 #include <vector>
-//----------------START----------------------
+//---START---
 int equalSumIndex(vector<int> &nums)
 {
   // STUDENT ANSWER
@@ -29,7 +29,7 @@ int equalSumIndex(vector<int> &nums)
   }
   return -1;
 }
-//----------------END----------------------
+//---END----
 int main()
 {
   vector<int> nums{3, 5, 2, 7, 6, 4};

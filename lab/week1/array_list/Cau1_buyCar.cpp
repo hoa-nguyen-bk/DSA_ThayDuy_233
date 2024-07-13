@@ -13,9 +13,7 @@ The result is 3, he can buy the cars having index 1, 2, 3 (first index is 0).
 #include <iostream>
 #include <algorithm>
 using namespace std;
-//**********************
-//**      START       **
-//**********************
+//---START---
 int buyCar(int *nums, int length, int k)
 {
   // Bước 1: sắp xếp lại cái đã, giống bài toán cái túi
@@ -38,10 +36,7 @@ int buyCar(int *nums, int length, int k)
   }
   return maxCars;
 }
-
-//**********************
-//**       END        **
-//**********************
+//---END----
 int main()
 {
   int nums[] = {90, 30, 40, 90, 20};
