@@ -15,6 +15,9 @@ are not allowed to add other libraries.
 #include <iostream>
 #include <algorithm>
 using namespace std;
+//**********************
+//**      START       **
+//**********************
 int buyCar(int *nums, int length, int k)
 {
   // Bước 1: sắp xếp lại cái đã, giống bài toán cái túi
@@ -37,6 +40,10 @@ int buyCar(int *nums, int length, int k)
   }
   return maxCars;
 }
+
+//**********************
+//**       END        **
+//**********************
 int main()
 {
   int nums[] = {90, 30, 40, 90, 20};
