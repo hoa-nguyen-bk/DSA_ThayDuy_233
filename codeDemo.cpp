@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
-//----------------START----------------------
-//----------------END----------------------
+//---START---
+//---END---
 int main()
 {
   return 0;
