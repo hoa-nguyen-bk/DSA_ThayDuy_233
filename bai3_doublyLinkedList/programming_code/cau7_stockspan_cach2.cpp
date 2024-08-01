@@ -6,29 +6,35 @@ Output. Các giá trị span, cách nhau bởi một khoảng cách, được xu
 #include <iostream>
 #include <vector>
 #include <sstream>
+#include <stack>
 using namespace std;
 //---START---
 std::vector<int> stock_span(const vector<int> &ns)
 {
-  int length = ns.size();
-  vector<int> spans;
-  for (int j = length - 1; j >= 0; j--)
-  {
-    int count = 0;
-    for (int i = j - 1; i >= 0; i--)
-    {
-      if (ns.at(j) > ns.at(i))
-      {
-        count++;
-      }
-      else
-      {
-        break;
-      }
+  int n = ns.size();
+    vector<int> spans(n, 1);  // Khởi tạo tất cả spans bằng 1
+    stack<int> st;  // Stack để lưu trữ chỉ số
+    
+    for (int i = 0; i < n; i++) {
+        // Loại bỏ các phần tử từ stack khi stack không rỗng và giá trị tại đỉnh
+        // stack nhỏ hơn hoặc bằng ns[i]
+        while (!st.empty() && ns[st.top()] <= ns[i]) {
+            st.pop();
+        }
+        
+        // Nếu stack rỗng, thì ns[i] lớn hơn tất cả các phần tử
+        // bên trái nó. Ngược lại, ns[i] lớn hơn các phần tử sau đỉnh stack
+        if(st.empty()){
+            spans[i] = i+1;
+        } else{
+            spans[i] = i-st.top();
+        }
+        
+        // Đẩy chỉ số của phần tử này vào stack
+        st.push(i);
     }
-    spans.insert(spans.begin() + 0, 1, count + 1);
-  }
-  return spans;
+    
+    return spans;
 }
 //---END---
 

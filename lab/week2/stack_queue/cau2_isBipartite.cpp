@@ -9,7 +9,7 @@ using namespace std;
 bool isBipartite(vector<vector<int>> graph)
 {
   int n = graph.size();
-  vector<int> color(n, 0); // 0 =bù unassigned, 1 = color 1, 2 = color 2
+  vector<int> color(n, 0); // 0 = unassigned, 1 = color 1, 2 = color 2
   for (int i = 0; i < n; i++)
   { // iterate over all nodes in the graph
     if (color[i] == 0)

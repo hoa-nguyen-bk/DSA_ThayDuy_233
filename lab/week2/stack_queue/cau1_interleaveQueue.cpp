@@ -4,49 +4,38 @@
 #include <stack>
 using namespace std;
 //---START---
-void interleaveQueue(queue<int> &q)
+void interleaveQueue(queue<int> &hangDoi)
 {
-  if (q.empty())
+  if (hangDoi.empty())
     return;
-
-  int halfSize = q.size() / 2;
-  stack<int> s;
-
-  // Step 1: Move the first half of the queue into the stack
+  int halfSize = hangDoi.size() / 2;
+  stack<int> nganXep;
   for (int i = 0; i < halfSize; i++)
   {
-    s.push(q.front());
-    q.pop();
+    nganXep.push(hangDoi.front());
+    hangDoi.pop();
   }
-
-  // Step 2: Enqueue back the stack contents to the queue
-  while (!s.empty())
+  while (!nganXep.empty())
   {
-    q.push(s.top());
-    s.pop();
+    hangDoi.push(nganXep.top());
+    nganXep.pop();
   }
-
-  // Step 3: Move the first half of the queue to the back of the queue
   for (int i = 0; i < halfSize; i++)
   {
-    q.push(q.front());
-    q.pop();
+    hangDoi.push(hangDoi.front());
+    hangDoi.pop();
   }
-
-  // Step 4: Move the first half of the queue into the stack again
   for (int i = 0; i < halfSize; i++)
   {
-    s.push(q.front());
-    q.pop();
+    nganXep.push(hangDoi.front());
+    hangDoi.pop();
   }
-
-  // Step 5: Interleave the elements of the stack and the queue
-  while (!s.empty())
+  while (!nganXep.empty())
   {
-    q.push(s.top());
-    s.pop();
-    q.push(q.front());
-    q.pop();
+    hangDoi.push(nganXep.top());
+    nganXep.pop();
+    hangDoi.push(hangDoi.front());
+    hangDoi.pop();
   }
 }
 

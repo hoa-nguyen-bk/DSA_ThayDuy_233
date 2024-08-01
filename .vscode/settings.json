@@ -5,6 +5,10 @@
     "iostream": "cpp",
     "algorithm": "cpp",
     "vector": "cpp",
-    "queue": "cpp"
+    "queue": "cpp",
+    "deque": "cpp",
+    "stack": "cpp",
+    "xlocinfo": "cpp",
+    "xutility": "cpp"
   }
 }
