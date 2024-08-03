@@ -51,7 +51,12 @@ vector<int> levelAlterTraverse(BSTNode *root)
 }
 //---END---
 
-
+void printVector(const vector<int>& vec) {
+    for (int val : vec) {
+        cout << val << " ";
+    }
+    cout << endl;
+}
 int main()
 {
   int arr[] = {0, 3, 5, 1, 2, 4};
