@@ -53,22 +53,20 @@ public:
     int n = end - start;
 
     // Build heap (rearrange array)
-    for (int i = n / 2 - 1; i >= 0; i--)
+    for (int i = n / 2 - 1; i >= 0; i--){
+      Sorting<T>::printArray(start, end); 
       heapify(start, end, i);
+    }
 
     // Print array
     Sorting<T>::printArray(start, end);
   }
 };
 int main() 
-{
-  // câu 5
-  // const int length = 15;
-  // int arr[length] = {21,19,99,89,40,77,88,69,9,87,32,61,18,36,30};
-  
+{  
   //câu 7
-  const int length = 15;
-  int arr[length] = {73,79,47,93,65,96,44,80,85,49,37,14,38,84,22};
+  const int length = 11;
+  int arr[length] = {23, 17, 14, 6, 13, 20, 10, 11, 5, 7, 12};
   Sorting<int>::heapSort(&arr[0], &arr[length]);
   cout<<count_swap<<endl;
   return 0;
