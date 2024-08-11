@@ -541,3 +541,5 @@ hp(k, i) = (h(k) + i
 4. Sử dụng phương pháp địa chỉ mở (open addressing) để giải quyết đụng độ với phương
 pháp băm đôi (double hashing):
 hp(k, i) = (h1(k) + ih2(k)) mod m
+
+
