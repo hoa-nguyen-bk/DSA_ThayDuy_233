@@ -162,6 +162,59 @@ Thứ tự các đỉnh khi thực hiện duyệt cây ưu tiên theo chiều r�
 
 $ \mathbf{a, e, d, b, g, f, c} $
 
+## Câu 4: 
+Sắp xếp các danh sách liền kề ở câu 1 theo chiều tăng dần của trọng số các cạnh. Hãy
+trình bày lại thứ tự các đỉnh khi thực hiện duyệt cây ưu tiên theo chiều rộng. Đỉnh bắt
+đầu là a.
+
+### Sắp xếp danh sách liền kề theo chiều tăng dần của trọng số các cạnh:
+
+Trước hết, chúng ta cần sắp xếp danh sách liền kề của từng đỉnh theo thứ tự tăng dần của trọng số các cạnh. Dưới đây là các danh sách sau khi đã sắp xếp:
+
+1. **$ a $**: $ b(5), e(16), d(20) $
+2. **$ b $**: $ a(5), e(11), c(13) $
+3. **$ c $**: $ e(15), b(13) $
+4. **$ d $**: $ f(9), e(19), a(20) $
+5. **$ e $**: $ g(8), b(11), c(15), f(17), d(19) $
+6. **$ f $**: $ d(9), g(12), e(17) $
+7. **$ g $**: $ e(8), f(12) $
+
+### Thực hiện duyệt cây ưu tiên theo chiều rộng (BFS) từ đỉnh $ a $:
+
+1. **Bước 1**: Bắt đầu từ đỉnh $ a $. Thêm các đỉnh kết nối với $ a $ vào hàng đợi theo thứ tự trọng số tăng dần:
+   - Hàng đợi: $ [b, e, d] $
+   - Đỉnh đã thăm: $ [a] $
+
+2. **Bước 2**: Lấy đỉnh $ b $ từ hàng đợi và thăm. Thêm các đỉnh kết nối với $ b $ vào hàng đợi theo thứ tự trọng số tăng dần (chỉ thêm các đỉnh chưa thăm):
+   - Hàng đợi: $ [e, d, c] $
+   - Đỉnh đã thăm: $ [a, b] $
+
+3. **Bước 3**: Lấy đỉnh $ e $ từ hàng đợi và thăm. Thêm các đỉnh kết nối với $ e $ vào hàng đợi theo thứ tự trọng số tăng dần (chỉ thêm các đỉnh chưa thăm):
+   - Hàng đợi: $ [d, c, g, f] $
+   - Đỉnh đã thăm: $ [a, b, e] $
+
+4. **Bước 4**: Lấy đỉnh $ d $ từ hàng đợi và thăm. Thêm các đỉnh kết nối với $ d $ vào hàng đợi theo thứ tự trọng số tăng dần (chỉ thêm các đỉnh chưa thăm):
+   - Hàng đợi: $ [c, g, f] $ (không thêm đỉnh nào vì các đỉnh kết nối với $ d $ đã được thăm)
+   - Đỉnh đã thăm: $ [a, b, e, d] $
+
+5. **Bước 5**: Lấy đỉnh $ c $ từ hàng đợi và thăm. Thêm các đỉnh kết nối với $ c $ vào hàng đợi theo thứ tự trọng số tăng dần (chỉ thêm các đỉnh chưa thăm):
+   - Hàng đợi: $ [g, f] $
+   - Đỉnh đã thăm: $ [a, b, e, d, c] $
+
+6. **Bước 6**: Lấy đỉnh $ g $ từ hàng đợi và thăm. Thêm các đỉnh kết nối với $ g $ vào hàng đợi theo thứ tự trọng số tăng dần (chỉ thêm các đỉnh chưa thăm):
+   - Hàng đợi: $ [f] $
+   - Đỉnh đã thăm: $ [a, b, e, d, c, g] $
+
+7. **Bước 7**: Lấy đỉnh $ f $ từ hàng đợi và thăm. Không thêm đỉnh nào vì các đỉnh kết nối với $ f $ đã được thăm hoặc có trong hàng đợi.
+   - Hàng đợi: $ [] $
+   - Đỉnh đã thăm: $ [a, b, e, d, c, g, f] $
+
+### Kết quả:
+
+Thứ tự các đỉnh khi thực hiện duyệt cây ưu tiên theo chiều rộng từ đỉnh $ a $ sau khi sắp xếp danh sách liền kề theo trọng số tăng dần là:
+
+\[ \mathbf{a, b, e, d, c, g, f} \]
+
 ## Câu 7
 ### Cây khung nhỏ nhất (Minimum Spanning Tree - MST) là cây bao gồm tất cả các đỉnh của đồ thị, nhưng chỉ có các cạnh cần thiết để giữ kết nối tất cả các đỉnh, sao cho tổng trọng số của các cạnh là nhỏ nhất. Để tìm MST, ta có thể sử dụng hai thuật toán: **Prim** và **Kruskal**.
 

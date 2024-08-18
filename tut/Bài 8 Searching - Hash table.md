@@ -1,7 +1,5 @@
 # ***Bài tập 1***
 
-# ***Bài tập 2***
-
 Cho một dãy các số nguyên đã sắp xếp: [2, 9, 11, 14, 16, 18, 23, 25, 44, 49, 50, 53, 57, 70, 74, 76, 78, 79, 81, 83, 84, 86, 91, 93, 97].
 
 *1.* Sử dụng giải thuật tìm kiếm nhị phân để tìm phần tử 84, số phép so sánh phải thực hiện là bao nhiêu? Liệt kê các phép so sánh đó.
@@ -75,87 +73,6 @@ lượt thêm các khóa 15, 78, 56, 25, 19, 38, 57, 76, 34, 53, 72, 91 vào b�
 1. Sử dụng phương pháp kết chuỗi (chaining) để giải quyết đụng độ.
 
 **Giải câu 1**: 
-### 1. Sử dụng phương pháp kết chuỗi (chaining) để giải quyết đụng độ:
-
-Phương pháp kết chuỗi (chaining) lưu trữ các khóa bị đụng độ trong cùng một vị trí của bảng băm dưới dạng danh sách liên kết (linked list).
-
-Ta có hàm băm $( h(k) = k \mod 19 )$, và m = 19.
-
-Dưới đây là quá trình thêm các khóa vào bảng băm:
-
-1. **Khóa 15**:
-   - $( h(15) = 15 \mod 19 = 15 )$
-   - Chèn 15 vào vị trí 15.
-  
-2. **Khóa 78**:
-   - $( h(78) = 78 \mod 19 = 2 )$
-   - Chèn 78 vào vị trí 2.
-
-3. **Khóa 56**:
-   - $( h(56) = 56 \mod 19 = 18 )$
-   - Chèn 56 vào vị trí 18.
-
-4. **Khóa 25**:
-   - $( h(25) = 25 \mod 19 = 6 )$
-   - Chèn 25 vào vị trí 6.
-
-5. **Khóa 19**:
-   - $( h(19) = 19 \mod 19 = 0 )$
-   - Chèn 19 vào vị trí 0.
-
-6. **Khóa 38**:
-   - $( h(38) = 38 \mod 19 = 0 )$
-   - Vị trí 0 đã có khóa 19, chèn 38 vào vị trí 0 dưới dạng danh sách liên kết.
-
-7. **Khóa 57**:
-   - $( h(57) = 57 \mod 19 = 0 )$
-   - Vị trí 0 đã có khóa 19 và 38, chèn 57 vào vị trí 0 dưới dạng danh sách liên kết.
-
-8. **Khóa 76**:
-   - $( h(76) = 76 \mod 19 = 0 )$
-   - Vị trí 0 đã có khóa 19, 38 và 57, chèn 76 vào vị trí 0 dưới dạng danh sách liên kết.
-
-9. **Khóa 34**:
-   - $( h(34) = 34 \mod 19 = 15 )$
-   - Vị trí 15 đã có khóa 15, chèn 34 vào vị trí 15 dưới dạng danh sách liên kết.
-
-10. **Khóa 53**:
-    - $( h(53) = 53 \mod 19 = 15 )$
-    - Vị trí 15 đã có khóa 15 và 34, chèn 53 vào vị trí 15 dưới dạng danh sách liên kết.
-
-11. **Khóa 72**:
-    - $( h(72) = 72 \mod 19 = 15 )$
-    - Vị trí 15 đã có khóa 15, 34 và 53, chèn 72 vào vị trí 15 dưới dạng danh sách liên kết.
-
-12. **Khóa 91**:
-    - $( h(91) = 91 \mod 19 = 15 )$
-    - Vị trí 15 đã có khóa 15, 34, 53 và 72, chèn 91 vào vị trí 15 dưới dạng danh sách liên kết.
-
-Kết quả cuối cùng của bảng băm với phương pháp kết chuỗi sẽ như sau:
-
-```
-0: 19 -> 38 -> 57 -> 76
-1: 
-2: 78
-3: 
-4: 
-5: 
-6: 25
-7: 
-8: 
-9: 
-10: 
-11: 
-12: 
-13: 
-14: 
-15: 15 -> 34 -> 53 -> 72 -> 91
-16: 
-17: 
-18: 56
-```
-
-### 2. Sử dụng phương pháp địa chỉ mở (open addressing) với dò tìm tuyến tính:
 ### 1. Sử dụng phương pháp kết chuỗi (chaining) để giải quyết đụng độ:
 
 Phương pháp kết chuỗi (chaining) lưu trữ các khóa bị đụng độ trong cùng một vị trí của bảng băm dưới dạng danh sách liên kết (linked list).
@@ -342,9 +259,10 @@ Dưới đây là quá trình thêm các khóa vào bảng băm:
     - Vị trí 18 đã bị chiếm, tiếp tục dò tìm:
     - $( hp(72, 4) = (15 + 4) \mod 19 = 0 )$
     - Vị trí 0 đã bị chiếm, tiếp tục dò tìm:
-    - $( hp(72, 5)
+    - $( hp(72, 5) )$
 
- = (15 + 5) \mod 19 = 1 )$
+10. **Khóa 15**:
+    - $( (15 + 5) \mod 19 = 1 )$ 
     - Vị trí 1 đã bị chiếm, tiếp tục dò tìm:
     - $( hp(72, 6) = (15 + 6) \mod 19 = 2 )$
     - Vị trí 2 đã bị chiếm, tiếp tục dò tìm:
