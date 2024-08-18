@@ -163,10 +163,9 @@ Thứ tự các đỉnh khi thực hiện duyệt cây ưu tiên theo chiều r�
 $ \mathbf{a, e, d, b, g, f, c} $
 
 ## Câu 4: 
-Sắp xếp các danh sách liền kề ở câu 1 theo chiều tăng dần của trọng số các cạnh. Hãy
+4. Sắp xếp các danh sách liền kề ở câu 1 theo chiều tăng dần của trọng số các cạnh. Hãy
 trình bày lại thứ tự các đỉnh khi thực hiện duyệt cây ưu tiên theo chiều rộng. Đỉnh bắt
 đầu là a.
-
 ### Sắp xếp danh sách liền kề theo chiều tăng dần của trọng số các cạnh:
 
 Trước hết, chúng ta cần sắp xếp danh sách liền kề của từng đỉnh theo thứ tự tăng dần của trọng số các cạnh. Dưới đây là các danh sách sau khi đã sắp xếp:
@@ -214,6 +213,7 @@ Trước hết, chúng ta cần sắp xếp danh sách liền kề của từng 
 Thứ tự các đỉnh khi thực hiện duyệt cây ưu tiên theo chiều rộng từ đỉnh $ a $ sau khi sắp xếp danh sách liền kề theo trọng số tăng dần là:
 
 \[ \mathbf{a, b, e, d, c, g, f} \]
+
 
 ## Câu 7
 ### Cây khung nhỏ nhất (Minimum Spanning Tree - MST) là cây bao gồm tất cả các đỉnh của đồ thị, nhưng chỉ có các cạnh cần thiết để giữ kết nối tất cả các đỉnh, sao cho tổng trọng số của các cạnh là nhỏ nhất. Để tìm MST, ta có thể sử dụng hai thuật toán: **Prim** và **Kruskal**.
