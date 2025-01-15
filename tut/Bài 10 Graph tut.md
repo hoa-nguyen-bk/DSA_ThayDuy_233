@@ -163,7 +163,7 @@ Thứ tự các đỉnh khi thực hiện duyệt cây ưu tiên theo chiều r�
 $ \mathbf{a, e, d, b, g, f, c} $
 
 ## Câu 4: 
-4. Sắp xếp các danh sách liền kề ở câu 1 theo chiều tăng dần của trọng số các cạnh. Hãy
+Sắp xếp các danh sách liền kề ở câu 1 theo chiều tăng dần của trọng số các cạnh. Hãy
 trình bày lại thứ tự các đỉnh khi thực hiện duyệt cây ưu tiên theo chiều rộng. Đỉnh bắt
 đầu là a.
 ### Sắp xếp danh sách liền kề theo chiều tăng dần của trọng số các cạnh:

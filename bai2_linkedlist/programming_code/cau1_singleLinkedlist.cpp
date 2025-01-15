@@ -1,7 +1,7 @@
 #include <iostream>
+using namespace std;
 #include <stdexcept>
 #include <sstream>
-using namespace std;
 
 //**********************
 //**      START       **

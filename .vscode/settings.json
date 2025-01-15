@@ -1,5 +1,6 @@
 {
   "files.associations": {
+    "*.embeddedhtml": "html",
     "xlocale": "cpp",
     "xstring": "cpp",
     "iostream": "cpp",
@@ -51,7 +52,8 @@
     "xtr1common": "cpp",
     "list": "cpp",
     "unordered_map": "cpp",
-    "xhash": "cpp"
+    "xhash": "cpp",
+    "fstream": "cpp"
   },
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#fbed80",
